@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="04/16/2020 12:25:54" ReportInfo.Modified="06/02/2020 12:46:08" ReportInfo.CreatorVersion="2020.1.0.0">
+  <Dictionary>
+    <BusinessObjectDataSource Name="LabelsToPrint" ReferenceName="LabelsToPrint" DataType="null" Enabled="true"/>
+  </Dictionary>
+  <ReportPage Name="Page1" Landscape="true" PaperWidth="44.45" PaperHeight="19.05" LeftMargin="0" TopMargin="0" RightMargin="0" BottomMargin="0" Guides="56.7,147.65,0,40.4,47.25,160.65,9.45,124.8,124.8,151.2,151.2,151.2,151.2,151.2,151.2,151.2,151.2,151.2" Watermark.Font="Arial, 60pt">
+    <DataBand Name="Data1" Width="168.02" Height="72" Guides="18.9,47.25,9.45,49.85,0,56.7,66.15,75.6,85.05,67.2,76.8" DataSource="LabelsToPrint">
+      <BarcodeObject Name="Barcode1" Left="56.7" Top="12.48" Width="90.95" Height="24" AutoSize="false" Text="[LabelsToPrint.Ean]" AllowExpressions="true" Barcode="EAN13"/>
+      <BarcodeObject Name="Barcode2" Top="-0.15" Width="40.4" Height="40.4" AutoSize="false" Text="[LabelsToPrint.Qr]" ShowText="false" AllowExpressions="true" Barcode="QR Code" Barcode.ErrorCorrection="L" Barcode.Encoding="UTF8" Barcode.QuietZone="true"/>
+      <TextObject Name="Text1" Left="43.2" Top="1.92" Width="120.96" Height="9.6" Text="[LabelsToPrint.Description]" HorzAlign="Center" VertAlign="Center" Font="Calibri, 4pt, style=Bold"/>
+      <TextObject Name="Text2" Left="9.45" Top="39.36" Width="151.2" Height="6.8" Text="[LabelsToPrint.Address]" HorzAlign="Center" VertAlign="Center" Font="Calibri, 4pt, style=Bold"/>
+      <TextObject Name="Text3" Left="9.45" Top="47.04" Width="151.2" Height="6.8" Text="[LabelsToPrint.Quantity]" HorzAlign="Center" VertAlign="Center" Font="Calibri, 4pt, style=Bold"/>
+      <TextObject Name="Text4" Left="9.45" Top="54.72" Width="151.2" Height="6.8" CanShrink="true" Text="[LabelsToPrint.Message]" HorzAlign="Center" VertAlign="Center" Font="Calibri, 4pt, style=Bold"/>
+      <TextObject Name="Text5" Left="9.45" Top="62.4" Width="151.2" Height="6.8" Text="[LabelsToPrint.Country]" HorzAlign="Center" VertAlign="Center" Font="Calibri, 4pt, style=Bold"/>
+    </DataBand>
+  </ReportPage>
+</Report>

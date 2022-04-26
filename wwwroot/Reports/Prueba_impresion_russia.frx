@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="03/26/2021 16:25:16" ReportInfo.Modified="03/26/2021 16:53:24" ReportInfo.CreatorVersion="2020.4.0.0">
+  <Dictionary/>
+  <ReportPage Name="Page1" Landscape="true" PaperWidth="50.8" PaperHeight="25.4" LeftMargin="0" TopMargin="0" RightMargin="0" BottomMargin="0" FirstPageSource="15" OtherPagesSource="15" LastPageSource="15" Watermark.Font="Arial, 60pt">
+    <DataBand Name="Data1" Width="192.02" Height="85.05">
+      <BarcodeObject Name="Barcode1" Left="75.75" Top="28.5" Width="22.68" Height="22.68" AutoSize="false" Text="07465603170599yMb/HwTAAAALDSW" ShowText="false" Barcode="Datamatrix" Barcode.SymbolSize="Auto" Barcode.Encoding="Auto" Barcode.CodePage="1252" Barcode.PixelSize="3" Barcode.AutoEncode="true"/>
+      <BarcodeObject Name="Barcode3" Left="12" Top="38.85" Width="18.9" Height="18.9" AutoSize="false" Text="07465603170599yMb/HwTAAAALDSW" ShowText="false" Barcode="Datamatrix" Barcode.SymbolSize="Auto" Barcode.Encoding="Auto" Barcode.CodePage="1252" Barcode.PixelSize="3" Barcode.AutoEncode="true"/>
+      <BarcodeObject Name="Barcode4" Left="133.65" Top="29.1" Width="26.46" Height="26.46" AutoSize="false" Text="07465603170599yMb/HwTAAAALDSW" ShowText="false" Barcode="Datamatrix" Barcode.SymbolSize="Auto" Barcode.Encoding="Auto" Barcode.CodePage="1252" Barcode.PixelSize="3" Barcode.AutoEncode="true"/>
+      <TextObject Name="Text1" Left="9.45" Top="66.15" Width="94.5" Height="18.9" Text="5x5 mm" Font="Arial, 6pt"/>
+      <TextObject Name="Text2" Left="75.6" Top="56.7" Width="94.5" Height="18.9" Text="6x6" Font="Arial, 6pt"/>
+      <TextObject Name="Text3" Left="132.3" Top="56.7" Width="47.25" Height="18.9" Text="7x7" Font="Arial, 6pt"/>
+    </DataBand>
+  </ReportPage>
+</Report>

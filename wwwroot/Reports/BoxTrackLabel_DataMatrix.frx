@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="04/16/2020 12:25:54" ReportInfo.Modified="06/07/2021 16:57:39" ReportInfo.CreatorVersion="2020.4.0.0">
+  <ScriptText>using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Windows.Forms;
+using System.Drawing;
+using System.Data;
+using FastReport;
+using FastReport.Data;
+using FastReport.Dialog;
+using FastReport.Barcode;
+using FastReport.Table;
+using FastReport.Utils;
+
+namespace FastReport
+{
+  public class ReportScript
+  {              
+  
+    private void Barcode1_BeforePrint(object sender, EventArgs e)
+    {
+      string barcode =  (string)Report.GetColumnValue(&quot;LabelsToPrint.Ean&quot;);
+      int codeLength = barcode.Length; 
+      if(codeLength == 13)
+      {
+        Barcode1.Barcode = new BarcodeEAN13();                  
+      }
+      else if(codeLength == 12 || codeLength == 11)
+      {
+        Barcode1.Barcode = new BarcodeUPC_A();                
+      }
+      else
+      {
+        Barcode1.Barcode = new Barcode128();
+        //(Barcode1.Barcode as BarcodeEAN128).AutoEncode = false;
+      }
+    }
+  }
+}
+</ScriptText>
+  <Styles>
+    <Style Name="BarCode" Font="Arial, 8pt, style=Bold" ApplyBorder="false" ApplyFill="false"/>
+  </Styles>
+  <Dictionary>
+    <BusinessObjectDataSource Name="LabelsToPrint" ReferenceName="LabelsToPrint" DataType="null" Enabled="true"/>
+  </Dictionary>
+  <ReportPage Name="Page1" Landscape="true" PaperWidth="50.8" PaperHeight="25.4" LeftMargin="0" TopMargin="0" RightMargin="0" BottomMargin="0" Guides="56.7,147.65,0,40.4,47.25,160.65,9.45,124.8,124.8,151.2,151.2,151.2,151.2,151.2,151.2,151.2,151.2,151.2" Watermark.Font="Arial, 60pt">
+    <DataBand Name="Data1" Width="192.02" Height="87.44" BeforePrintEvent="Data1_BeforePrint" Guides="18.9,47.25,9.45,49.85,0,56.7,66.15,75.6,85.05,67.2,76.8" DataSource="LabelsToPrint">
+      <BarcodeObject Name="Barcode1" Left="56.7" Top="16.32" Width="129.65" Height="39.36" BeforePrintEvent="Barcode1_BeforePrint" AutoSize="false" Text="[LabelsToPrint.Ean]" AllowExpressions="true" Barcode="EAN13"/>
+      <BarcodeObject Name="Barcode2" Left="1.13" Top="10.56" Width="48.01" Height="47.63" AutoSize="false" Text="[LabelsToPrint.Qr]" ShowText="false" AllowExpressions="true" Barcode="QR Code" Barcode.ErrorCorrection="L" Barcode.Encoding="UTF8" Barcode.QuietZone="true"/>
+      <TextObject Name="Text1" Left="0.96" Top="3.84" Width="190.08" Height="9.6" Text="[LabelsToPrint.Description]" HorzAlign="Center" VertAlign="Center" Font="Arial, 4.1pt, style=Bold"/>
+      <TextObject Name="Text2" Left="1.89" Top="61.44" Width="189" Height="6.8" Text="[LabelsToPrint.Address]" HorzAlign="Center" VertAlign="Center" Font="Arial, 4.5pt, style=Bold"/>
+      <TextObject Name="Text5" Left="1.89" Top="71.04" Width="189" Height="6.8" Text="[LabelsToPrint.Country]" HorzAlign="Center" VertAlign="Center" Font="Arial, 4.5pt, style=Bold"/>
+      <TextObject Name="Text6" Left="1.89" Top="80.64" Width="189" Height="6.8" Text="[LabelsToPrint.CountryEn]" HorzAlign="Center" VertAlign="Center" Font="Arial, 4.5pt, style=Bold"/>
+      <TextObject Name="Text7" Left="3.84" Top="54.72" Width="38.4" Height="5.76" Text="[LabelsToPrint.Module]" VertAlign="Center" Font="Arial, 4.1pt, style=Bold"/>
+      <BarcodeObject Name="Barcode3" Left="165.56" Top="69.93" Width="18.9" Height="18.9" AutoSize="false" Text="[LabelsToPrint.DataMatrixCode]" ShowText="false" AllowExpressions="true" Barcode="Datamatrix" Barcode.SymbolSize="Auto" Barcode.Encoding="Auto" Barcode.CodePage="1252" Barcode.PixelSize="3" Barcode.AutoEncode="true"/>
+    </DataBand>
+  </ReportPage>
+</Report>
